@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="d-flex align-items-center justify-content-around">
+        <div class="d-flex align-items-center justify-content-between">
             <div>
                 <img src="../assets/img/favicon-autocar.png" alt="">
             </div>
@@ -42,7 +42,7 @@ export default {
                     <span class="px-1">Add Car</span>
                 </div>
             </div>
-            <div class="fw-bold px-3">
+            <div class="fw-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"

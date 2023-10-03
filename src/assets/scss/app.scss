@@ -5,3 +5,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#site_jumbotron {
+    .myfont {
+        font-size: 70px;
+    }
+
+    .myfont1 {
+        font-size: 21px;
+    }
+
+    .mypositionleft {
+        top: 50%;
+        left: 1%;
+        cursor: pointer;
+    }
+
+    .mypositionright {
+        top: 50%;
+        right: 1%;
+        cursor: pointer;
+    }
+
+
+}
+
+#car_search {
+    .mywidth {
+        width: 170px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .myfont {
+        font-size: 11px;
+    }
+
+}
