@@ -42,3 +42,25 @@
     }
 
 }
+
+#wanttobuy {
+    .myfont {
+        font-size: 35px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        border: 1px solid white;
+        border-radius: 50%;
+    }
+
+    .mypositionfirst {
+        top: 8%;
+    }
+
+    .mypositionsecond {
+        top: 65%;
+        right: 0;
+    }
+}
