@@ -64,3 +64,26 @@
         right: 0;
     }
 }
+
+#customer {
+    .myposition {
+        top: 14%;
+        transform: rotate(190deg);
+        color: rgba(237, 235, 246, 1);
+    }
+
+    .mywidthfirst {
+        background-color: black;
+        width: 13%;
+        border-radius: 10px;
+        height: 8px;
+    }
+
+    .mywidthsecond {
+        background-color: #c1c1c1;
+        width: 5%;
+        border-radius: 10px;
+        height: 8px;
+    }
+
+}
