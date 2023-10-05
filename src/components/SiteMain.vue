@@ -1,9 +1,6 @@
 <script>
-import SiteJumbotron from './SiteJumbotron.vue';
 export default {
     name: 'SiteMain',
-    components: 'SiteJumbotron',
-    components: { SiteJumbotron }
 }
 </script>
 

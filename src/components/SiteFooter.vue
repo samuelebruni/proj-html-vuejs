@@ -1,6 +1,12 @@
 <script>
+import { store } from '../store.js'
 export default {
-    name: 'SiteFooter'
+    name: 'SiteFooter',
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
@@ -97,50 +103,22 @@ export default {
                 <div class="col-2 text-white pt-4 px-4">
                     <h3>My Account</h3>
                     <ul class="list-unstyled d-flex flex-column gap-3 pt-4">
-                        <li class="d-flex align-items-center gap-2">
+                        <li class="d-flex align-items-center gap-2" v-for="voice in store.firstFooterVoices">
                             <span class="mywidth"></span>
-                            <span>My Account</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Checkout</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Cart</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Packages</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Add Car</span>
+                            <span>
+                                <a class="text-decoration-none text-white" :href="voice.id">{{ voice.text }}</a>
+                            </span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-2 text-white pt-4 px-4">
                     <h3>Quick Links</h3>
                     <ul class="list-unstyled d-flex flex-column gap-3 pt-4">
-                        <li class="d-flex align-items-center gap-2">
+                        <li class="d-flex align-items-center gap-2" v-for="voice in store.secondFooterVoices">
                             <span class="mywidth"></span>
-                            <span>Home</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>About Us</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Blog</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Contact</span>
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <span class="mywidth"></span>
-                            <span>Refound & Returns</span>
+                            <span>
+                                <a class="text-decoration-none text-white" :href="voice.id">{{ voice.text }}</a>
+                            </span>
                         </li>
                     </ul>
                 </div>
