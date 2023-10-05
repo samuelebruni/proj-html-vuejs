@@ -78,4 +78,17 @@ export const store = reactive({
             text: 'Refound & Returns'
         }
     ],
+
+    activeImage: 0,
+    thumbImg: '',
+    intervall: null,
+    slides: [
+        {
+            image: '../assets/img/slider-autocar-5.jpg'
+        },
+        {
+            image: '../assets/img/slider-autocar-6.jpg'
+        }
+    ],
+
 })

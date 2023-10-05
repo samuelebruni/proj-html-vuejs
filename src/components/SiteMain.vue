@@ -1,13 +1,45 @@
 <script>
+import { store } from '../store.js'
 export default {
     name: 'SiteMain',
+    data() {
+        return {
+            store
+        }
+    },
+    mounted() {
+        this.startCounter();
+    },
+    methods: {
+        getImg(url) {
+            return new URL(`${url}`, import.meta.url).href
+        },
+        next() {
+            store.activeImage++
+            if (store.activeImage > store.slides.length - 1) {
+                store.activeImage = 0
+            }
+        },
+        prev() {
+            store.activeImage--
+            if (store.activeImage < 0) {
+                store.activeImage = 1
+            }
+        },
+        startCounter() {
+            store.intervall = setInterval(this.next, 4000);
+        }
+    }
 }
 </script>
 
 <template>
     <!--JUMBOTRON-->
     <section id="site_jumbotron" class="position-relative">
-        <div class="container h-100 d-flex align-items-center">
+        <div class="position-relative">
+            <img :src="getImg(store.slides[store.activeImage].image)" class="mod_img">
+        </div>
+        <div class="container h-100 d-flex align-items-center position-absolute myposition">
             <div class="col-6 text-white fw-bold">
                 <h1 class="myfont">Buy And Sell Your Car At Its Value
                 </h1>
@@ -22,14 +54,14 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="text-white position-absolute mypositionleft">
+        <div class="text-white position-absolute mypositionleft" @click="prev()">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left"
                 viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
             </svg>
         </div>
-        <div class="text-white position-absolute mypositionright">
+        <div class="text-white position-absolute mypositionright" @click="next()">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right"
                 viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -862,14 +894,6 @@ export default {
     <!--ENDRESENTARTICLE-->
 </template>
 <style scoped>
-#site_jumbotron {
-    background-image: url(../assets/img/slider-autocar-5.jpg);
-    height: 830px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .backimg {
     background-image: url(../assets/img/circle-auto-car-1.png);
     height: 600px;
