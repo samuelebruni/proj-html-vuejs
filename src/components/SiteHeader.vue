@@ -55,4 +55,8 @@ export default {
     </section>
 </template>
 
-<style></style>
+<style scoped>
+li:hover {
+    border-bottom: 2px solid black
+}
+</style>

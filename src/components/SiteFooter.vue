@@ -4,7 +4,16 @@ export default {
     name: 'SiteFooter',
     data() {
         return {
-            store
+            store,
+            result: ''
+        }
+    },
+    methods: {
+        newsletterFunction() {
+            const hello = alert('👉 Grazie' + ' ' + this.result + ' ' + 'la tua registrazione è andata a buon fine ✔');
+            console.log(this.result);
+            this.result = ' ';
+
         }
     }
 }
@@ -86,9 +95,10 @@ export default {
                     <h3>Join Our Newsletter</h3>
                     <p class="pt-2">Subscribe to be informed about our services and products.</p>
                     <div class="mb-3 pt-4">
-                        <input type="email" class="form-control rounded-0 p-3" id="exampleFormControlInput1"
-                            placeholder=" Your Email Adress">
-                        <div class="text-black bg-white rounded-0 mt-3 p-3 w-100 text-center">
+                        <input type="text" class="form-control rounded-0 p-3" placeholder=" Your Email Adress"
+                            v-model="result" @keyup.enter="newsletterFunction">
+                        <div class="text-black bg-white rounded-0 mt-3 p-3 w-100 text-center btn"
+                            @click="newsletterFunction">
                             <span>
                                 Subscribe
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

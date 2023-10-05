@@ -88,7 +88,7 @@ export const store = reactive({
         },
         {
             image: '../assets/img/slider-autocar-6.jpg'
-        }
+        },
     ],
 
 })
